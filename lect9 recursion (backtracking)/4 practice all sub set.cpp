@@ -7,7 +7,7 @@ void generate(vector<int> &a,int k,vector<int> &temp){
     for(int e=k ; e< a.size(); e++){
         temp.push_back(a[e]);
         valid.push_back(temp);
-        generate(a,k+1,temp);
+        generate(a,e+1,temp);
         temp.pop_back();
     }
 }
@@ -24,6 +24,8 @@ int main(){
     vector<int> temp ;
     generate(a,k,temp);
 
+
+// printing
     for(int e=0 ;e<valid.size() ;e++){
         for(int w=0;  w<valid[e].size();w++){
             cout<<valid[e][w]<<" ";

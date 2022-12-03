@@ -1,4 +1,4 @@
-.chp/
+*.prob
 *.bin
 *.exe
 .vscode/
