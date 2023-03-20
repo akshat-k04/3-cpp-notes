@@ -1,0 +1,19 @@
+A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations. The elements in a linked list are linked using pointers.
+
+
+drawbacks of linked list 
+Direct access to an element is not possible in a linked list as in an array by index.
+Searching for an element is costly and requires O(n) time complexity.
+Sorting of linked lists is very complex and costly.
+Appending an element to a linked list is a costly operation, and takes O(n) time, where n is the number of elements in the linked list, as compared to arrays that take O(1) time.
+
+
+
+types of linked list :
+
+simple/singly linked list
+doubly linked list
+circular linked list
+doubly circular linked list
+
+

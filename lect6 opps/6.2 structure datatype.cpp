@@ -30,7 +30,7 @@ int main(){
     // array is used to store same type of items eg:- all int or char or float  etc
 
 
-    struct StudentData akshat,aastha,garvit,ravi,shanu ; // define object 
+    StudentData akshat,aastha,garvit,ravi,shanu ; // define object 
      akshat.age=18;
      akshat.nick_name ="ram" ;
      akshat.salary= 45000 ;

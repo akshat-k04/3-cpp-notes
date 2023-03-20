@@ -1,3 +1,5 @@
+//solved
+
 // Given an sorted array A of size N. Find number of elements which are less than or equal to B.
 
 // NOTE: Expected Time Complexity O(log N)

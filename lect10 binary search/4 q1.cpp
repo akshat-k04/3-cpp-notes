@@ -1,3 +1,5 @@
+//solved
+
 /*
 Given a bitonic sequence A of N distinct elements, write a program to find a given element B in the bitonic sequence in O(logN) time.
 

@@ -1,3 +1,4 @@
+//solved
  // binary search is applied on monotonus function only 
 // let us understand this with example of searching a element from sorted array
 
@@ -17,13 +18,20 @@
       if(a[e]>1){
          finalSpace=e ;
       }
-      else if(a[e]<1){
+      else{
          iniSpace = e ;
       }
+      
+    }
+    if(a[iniSpace]==1){
+      cout<<iniSpace<<endl ;
+    }
+    else{
+      if(a[finalSpace]==1){
+         cout<<finalSpace<<endl;
+      }
       else {
-         cout<<e <<endl;
-         exit(0) ;
+         cout<<"not present"<<endl ; 
       }
     }
-    cout<<"not present"<<endl ;
  }

@@ -1,0 +1,5 @@
+for question :-
+1. striver question series(video+pdf)
+2. use q which have video solution (follow Striver )
+3. for dsa maths use utkarsh gupta
+4. use cses for question solving 
