@@ -1,1 +1,7 @@
 backtracking is just as simple as that the function call it self
+
+point to be remember while using recursion is that 
+1. recursion function must have 1 base condition
+
+
+parameterissed and fnctional way recursion

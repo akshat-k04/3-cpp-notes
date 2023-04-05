@@ -55,16 +55,52 @@ bool checkPrime(int a){
 
 //solution here 
 
-void solve(int i ,int n){
-    if(i>n){
-        return  ; 
-    }
-    cout<<"akshat"<<" " ;
-    solve(i+1 , n) ;
+void dooperation( int ini ,int lst , vii & storage){
+    storage[ini]++ ;
+    storage[lst]-- ;
 }
 
 int main(){
-    int n;
-    cin>> n ;
-    solve(1,n) ;
+    int t ;
+    cin>>t ;
+    for(int r=0 ;r<t ;r++){
+        int n ,q ;
+        cin>>n>>q ;
+        vector<int> a(n) ;
+        for(int e=0 ;e<n ;e++){
+            cin>>a[e] ;
+        }
+ 
+        vector<vector<int>> query ;
+        for(int e=0 ;e<q ; e++){
+            vector<int> local ;
+            int h ;
+            cin>>h ;
+            local.push_back(h) ;
+            if(h==1){
+                cin>>h ;
+                local.push_back(h) ;
+                cin>>h ;
+                local.push_back(h) ;
+            }
+            else{
+                cin>>h ;
+                local.push_back(h) ;
+            }  
+            query.push_back(local) ;
+        }
+        vii ans ;
+        vii storage(n+1,0) ;
+        for(int e=0 ;e<q ;e++){
+            if(query[e][0]==1){
+                dooperation(query[e][1]-1,query[e][2],storage) ;
+            }
+            else {
+                ans.push_back(a[query[e][1]-1]) ;
+            }
+        }
+        for(int e=0 ;e<ans.size() ; e++){
+            cout<<ans[e]<<endl ;
+        }
+    }
 }
