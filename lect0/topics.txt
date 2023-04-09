@@ -9,7 +9,7 @@
     Traversal Based Problems
     Rotation Based Problems
 
-3.Recursion And Backtracking
+3.Recursion And Backtracking (done)
     Basic Recursion Questions
     Divide And Conquer
 
@@ -66,10 +66,15 @@
     
 13.Other Topics
     Hashmaps
-    Tries
+    Trees
     Bit Manipulation
     Greedy
     Circular Queues
     Deques - Hot Topic
     Doubly And Circular LL
     String Algorithms like KMP and Z Algorithm
+
+14. Extra topic 
+    prefix sum
+    no. theory
+    1795 contest Q c yogendra solution

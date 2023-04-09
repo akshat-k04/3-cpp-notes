@@ -1,6 +1,6 @@
 //not solved by recursion
 // print all the sub array
-
+//if want to solve can easily solve by 2 pointer
 
 #include <bits/stdc++.h>
 using namespace std ;

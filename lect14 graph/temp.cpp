@@ -13,7 +13,7 @@ typedef pair<long long, long long> pll;
 typedef vector<pair<long long, long long>> vpll;
 typedef vector<pair<int,int>> vpii;
 typedef vector<int> vii;
-typedef vector<vector<int>> vvii;
+typedef vector<vector<int>> vvii ;
 
 const ll largestLL= 1e18;
 const int largestI = 1e9;
@@ -23,9 +23,8 @@ const int primeInt = 998244353;
 /*inbuilt functions:-
 gcd :- __gcd(a,b)
 to convert int to string to_string(number)
-to convert char to int we have to handle it mannually int a = '6' - '0' 
+to convert char to int 
 queue<int>, stack<int> --> has push() ,pop() , front() for queue ,top() for stack , 
-reverse(a.begin() , a.end())
 */
 
 //functions
@@ -60,35 +59,41 @@ bool checkPrime(int a){
 
 //solution here 
 
+void generate(vii &a , vvii &ans,int p){
+    int n = a.size() ;
+    if(p==n){
+        bool flag = true ;
+        for(int e=0 ;e<n;e++){
+            if(e+1==a[e]){
+                flag = false ;
+            }
+        }
+        if(flag){
+            ans.pb(a) ;
+        }
+        return ;
+    }
+    for(int e=p ;e<n ; e++){
+        swap(a[e],a[p]) ;
+        generate(a,ans,p+1) ;
+        swap(a[e],a[p]) ;
+    }
+}
 
 int main(){
-    int n,k;
-    cin>>n>>k ; //n=4 =9
-    vii factorial ;
-    int temp=1 ;
-    for(int e=1 ; e<n ; e++){
-        temp*=e ;
-        factorial.pb(temp) ; //1
-    }
-    vii ans ; //
-    vii store ; //
+    int n ;
+    cin>>n ;
+    vii a ;
     for(int e=0 ;e<n ; e++){
-        store.pb(e+1) ; // 1 2 3 4
+        a.pb(e+1) ;
     }
-    while(factorial.size()>0){
-        int h = (k-1) /factorial[factorial.size()-1] ; //0 1 1 1
-        ans.pb(store[h]) ; // 1 3 4 5
-        store.erase(store.begin()+h) ; //2 3 4 5   2 4 5  2 5  2
-        k-= h*factorial[factorial.size()-1] ; // 10  4  2 1
-        factorial.pob(); // 1 2 6   1 2  1 null
+    //input is done 
+    vvii ans ;
+    generate(a,ans,0) ;
+    for(int e=0 ;e<ans.size() ; e++){
+        for(int p=0 ; p<ans[e].size() ; p++){
+            cout<<ans[e][p]<<" ";
+        }
+        cout<<endl ;
     }
-
-    for(int e=0 ;e<store.size(); e++){
-        ans.pb(store[e]) ;
-    }
-
-    for(int e=0 ;e<ans.size() ;e ++){
-        cout<<ans[e] ;
-    }
-    cout<<endl ;
 }

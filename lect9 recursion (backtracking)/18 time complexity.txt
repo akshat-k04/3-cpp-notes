@@ -1,0 +1,12 @@
+to find the time complexity of recursion find how many times the function calls 
+then find time complexity of running 1 function
+then multiply both to get total time complexity
+
+eg
+
+for factorial recursion tc = n*1 // n= now of times fucntion calls 1 is time com. of running the function
+
+for all permutation of 1,2,3,...n 
+tc is = n! * n 
+
+similar concept for space complexity as well

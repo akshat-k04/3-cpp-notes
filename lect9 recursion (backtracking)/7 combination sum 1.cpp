@@ -1,3 +1,5 @@
+//leet code combination sum link:-https://leetcode.com/problems/combination-sum/
+
 #include <bits/stdc++.h>
 using namespace std ;
 
@@ -13,7 +15,6 @@ typedef pair<long long, long long> pll;
 typedef vector<pair<long long, long long>> vpll;
 typedef vector<pair<int,int>> vpii;
 typedef vector<int> vii;
-typedef vector<vector<int>> vvii;
 
 const ll largestLL= 1e18;
 const int largestI = 1e9;
@@ -22,10 +23,6 @@ const int primeInt = 998244353;
 
 /*inbuilt functions:-
 gcd :- __gcd(a,b)
-to convert int to string to_string(number)
-to convert char to int we have to handle it mannually int a = '6' - '0' 
-queue<int>, stack<int> --> has push() ,pop() , front() for queue ,top() for stack , 
-reverse(a.begin() , a.end())
 */
 
 //functions
@@ -60,35 +57,46 @@ bool checkPrime(int a){
 
 //solution here 
 
+vector<vii> ans ;
+int summer  ;
+void generate(vii &a , vii & temp,int num,int sum){
+    if(num==a.size()){
+        if(sum==summer){
+            ans.pb(temp) ;
+        }
+        return ;
+    }
+    generate(a,temp,num+1 ,sum) ; 
+    int temmper= sum ;
+    while(sum<summer){
+       temp.pb(a[num]) ;
+       sum+= a[num] ;
+       generate(a,temp,num+1 ,sum) ; 
+    }
+    while(sum!=temmper){
+       temp.pob() ;
+       sum-= a[num] ;
+    }
+    
+}
 
 int main(){
-    int n,k;
-    cin>>n>>k ; //n=4 =9
-    vii factorial ;
-    int temp=1 ;
-    for(int e=1 ; e<n ; e++){
-        temp*=e ;
-        factorial.pb(temp) ; //1
+    int n ;
+    cin>>n ;
+    cin>>summer ;
+    vii a ;
+    for(int r=0 ;r<n ;r++){
+        int h ;
+        cin>>h ;
+        a.pb(h) ;
     }
-    vii ans ; //
-    vii store ; //
-    for(int e=0 ;e<n ; e++){
-        store.pb(e+1) ; // 1 2 3 4
-    }
-    while(factorial.size()>0){
-        int h = (k-1) /factorial[factorial.size()-1] ; //0 1 1 1
-        ans.pb(store[h]) ; // 1 3 4 5
-        store.erase(store.begin()+h) ; //2 3 4 5   2 4 5  2 5  2
-        k-= h*factorial[factorial.size()-1] ; // 10  4  2 1
-        factorial.pob(); // 1 2 6   1 2  1 null
-    }
+    vii temp ;
+    generate(a,temp,0,0) ;
 
-    for(int e=0 ;e<store.size(); e++){
-        ans.pb(store[e]) ;
+    for(int e=0 ;e<ans.size(); e++){
+        for(int f=0 ;f<ans[e].size() ; f++){
+            cout<<ans[e][f]<<" " ;
+        }
+        cout<<endl ;
     }
-
-    for(int e=0 ;e<ans.size() ;e ++){
-        cout<<ans[e] ;
-    }
-    cout<<endl ;
 }
