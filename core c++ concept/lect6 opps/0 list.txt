@@ -1,0 +1,7 @@
+intro
+struct,union
+what is typedef and #define
+class intro , public ,private
+static:- static variable,static memeber of class , static function of class
+friend
+constructors

@@ -1,0 +1,17 @@
+Only for DSA
+
+Completed:- 
+
+
+Ongoing :- 
+    1.Dynamic Programming
+    2.Binary Search
+
+
+all topics:- 
+    1.binary search
+    2. DP
+    3. backtracking
+    4. graph 
+    5. binary trees
+    6.

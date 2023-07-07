@@ -1,0 +1,4 @@
+7  matrix multiplication
+14.1 see both the method of non deterministic primarity test
+16 linear diophantine eqn (time no need to see video) 
+17 segmented sieve (i think i can do it with my self so no need to watch the video) 

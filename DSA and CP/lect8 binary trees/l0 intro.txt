@@ -1,0 +1,11 @@
+1.first element of the tree is called root
+
+2. each element has two or one branch that element is called children of the previous element.
+
+3.if the element has no children then they are called leaf node
+
+4.the above node ofperticular node are called ancesters of that node
+
+5.if bracnhes are made from the node then  the branches are called sub tree of that node
+
+  
