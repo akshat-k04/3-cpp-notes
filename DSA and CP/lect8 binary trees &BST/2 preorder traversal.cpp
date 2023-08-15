@@ -1,4 +1,4 @@
-//pre order traversal
+//pre order traversal (root left right)
 
  #include <bits/stdc++.h>
 using namespace std ;

@@ -1,0 +1,9 @@
+if i have the to find the sum of range in an array we do prefix sum and as we get query 
+we find the sum using prefix sum array
+
+now if with query we have to update the array then this will not work beacuse 
+with erevy update we have to cahneg the prefix sum array
+
+so here comes concept of segemnted tree
+
+**************************note:- if have time then solve thee question from apna college**********************

@@ -45,6 +45,30 @@ void deletation(node * &head , int a){
     }
 }
 
+//iterative method
+void reverse(node *&head){
+    node * prev = NULL ;
+    while(head->nxt!=NULL){
+        node * temp = head->nxt ;
+        head->nxt = prev ;
+        prev = head ;
+        head= temp ;
+    }
+    head->nxt = prev ;
+}
+
+//recursive method
+void reverse(node *&head ,node *prev){
+    if(head==NULL){
+        head=prev ;
+        return ;
+    }
+    node *temp = head->nxt ;
+    head->nxt = prev ;
+    swap(head,temp) ;
+    reverse(head,temp) ;
+}
+
 int main(){
     // the linked list starts from the head 
     // so lets create the head 
@@ -57,6 +81,7 @@ int main(){
         insert(head,a) ;
     }
     print(head) ;cout<<endl ;
-    deletation(head,1) ;
-    print(head) ;
+    reverse(head,NULL) ;
+    print(head) ;cout<<endl ;
+    
 }

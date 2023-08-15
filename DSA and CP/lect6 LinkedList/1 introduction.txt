@@ -15,5 +15,3 @@ simple/singly linked list
 doubly linked list
 circular linked list
 doubly circular linked list
-
-

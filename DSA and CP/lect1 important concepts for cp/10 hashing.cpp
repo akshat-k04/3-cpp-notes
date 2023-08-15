@@ -7,4 +7,4 @@
 // Hash table (also, hash map) is a data structure that basically maps keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots, from which the corresponding value can be found.
 
 // basically hashing and hashmaps are relatable and this are v simple as we do generally make 
-// a array tot store numbers
+// a array tot store numbers 

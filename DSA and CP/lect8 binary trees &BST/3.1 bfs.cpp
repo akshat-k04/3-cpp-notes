@@ -74,68 +74,52 @@ void print(vii & a){
 
 //solution here 
 
+struct node {
+    int data ;
+    struct node * left ;
+    struct node * right ;
+
+    node(int val){
+        data = val ;
+        left=NULL ;
+        right =NULL ;
+    }
+};
+void bfs(struct node* root){
+    queue<struct node*> que ;
+    vii nums ;
+    que.push(root) ;
+    while(que.size()!=0){
+        struct node * curr = que.front() ;
+        que.pop();
+        nums.pb(curr->data) ;
+        
+        if(curr-> left!=NULL)que.push(curr->left) ;
+        if(curr->right!=NULL)que.push(curr->right) ;
+    }
+    print(nums) ;
+}
 
 int main(){
-    int t;
-    cin>>t ;
-    for(int r=0 ;r<t ;r++){
-        int n ; //5
-        cin>>n ;
-        int k ; //2
-        cin>>k ;
-        vii a(n) ; //4 5 6 8 11
-        for(int e=0 ;e<n ;e++){
-            cin>>a[e] ;
-        }
-        sort(all(a)) ;
-        //input is done
-        int ans=a[n-1]-a[0] ; //5 
-
-        for(int e=1 ;e<=min(k,a[0]) ;e++){
-
-            int mini = int(a[0]/e) ; //2
-            int maxi=mini ;//2
-            for(int f=0 ;f<n ;f++){
-                int p ; 
-                p =a[f]/maxi  ;
-                p=min(p,k) ; //1
-                
-                if(a[f]/(maxi*1.0)!=p){
-                    
-                    if(int(a[f]/p)!=maxi){
-            // cout<<f;
-
-                        p=a[f]/mini ;
-                        p=min(p,k) ;
-                        if(int(a[f]/p)>mini &&int(a[f]/p)<=maxi){
-                            // all set
-                        }
-                        else{
-                            int q = a[f]/(maxi) ;
-                            q++ ;
-                            q=min(q,k);
-                            if(abs(mini-int(a[f]/q))>=int(a[f]/p)-maxi){
-                                maxi=max(maxi,int(a[f]/p)) ;
-                                mini=min(mini,int(a[f]/p)) ;
-
-                            }
-                            else{
-                                mini=min(mini,int(a[f]/q)) ;
-                                maxi=max(maxi,int(a[f]/q)) ;
-
-                            }
-                        }
-
-                    }
-                }
-                // cout<<e<<" "<<f<<endl ;
-
-            }
-            // cout<<maxi<<" "<<mini<<endl ;
-            ans=min(ans, (maxi-mini)) ;
-        }
-        // ans = min(ans,a[n-1]/k) ;
-        // cout<<r<<endl; 
-        cout<<ans<<endl ;
-    }
+    struct node * root= new node(1) ;
+    root->left = new node(2) ;
+    root-> right= new node(3) ;
+    /*
+         1
+        / \
+       2   3
+    */
+    root->left->left = new node(4) ;
+    root->left->right = new node(5) ;
+    root->right->left = new node(6) ;
+    root->right->right = new node(7) ;
+    /*
+           1
+          / \
+         2   3
+        / \ / \
+       4  5 6  7 
+    */
+    
+    bfs(root) ;
 }

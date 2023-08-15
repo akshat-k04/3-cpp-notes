@@ -8,4 +8,4 @@
 
 5.if bracnhes are made from the node then  the branches are called sub tree of that node
 
-  
+************main thing in graph is ancester which is not covered in graph in log n**********

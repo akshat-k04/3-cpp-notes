@@ -1,17 +1,21 @@
-Only for DSA
+all topics:-
+    1.Array and String(done)
+    2.Backtracking(done)
+    3.Sorting(done)
+    4.binary Search(done)
+    5.bit Manipulation(done)
+    6.stacks and Queues(done)
+    7.binary Tree and bst
+    8.Linked list
+    9.Graph
+    10.DP
+    11.range query
 
-Completed:- 
-
-
-Ongoing :- 
-    1.Dynamic Programming
-    2.Binary Search
-
-
-all topics:- 
-    1.binary search
-    2. DP
-    3. backtracking
-    4. graph 
-    5. binary trees
-    6.
+todos:-
+    1.binary Tree(done)
+    2.DSU(done)
+    3.range query(done)
+    4.bst(done)
+    5.linked list
+    6.DP
+    7.graph last algo(floyd warshell,Kruskal)

@@ -44,6 +44,12 @@ void deletation(node * &head , int a){
         }
     }
 }
+void swap(node * &prev , node *&swap1,node*&node2){
+   if(prev!=NULL) prev->nxt = node2 ;
+   node *temp = swap2->nxt ;
+   swap2->nxt = swap1 ;
+   swap1->nxt = temp ;
+}
 
 int main(){
     // the linked list starts from the head 

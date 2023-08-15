@@ -1,0 +1,13 @@
+2 method-> tabulation and memoization
+
+tabulation is bottom up method
+memoization is top dow method
+
+in tabulation we derive answer from base case 
+in memoization we recursively call the fuction and store im values and then using base 
+case we find the ans
+
+
+
+****** to solve the dp question you have to find which data is called again *********************
+this is one of the most imp thing you have to do first 

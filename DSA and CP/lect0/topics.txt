@@ -31,7 +31,7 @@
     Implementation Based Problems
     Application Based Problems
 
-8.Binary Trees
+8.Binary Trees(done)
     Tree Traversals
     Construction Of Trees
     Tree Views
@@ -43,19 +43,15 @@
     Modification in BST
     Standard Problems 
 
-10.Priority Queues And Heaps
-    Implementation Based problems
-    Conversion based problems
-    K Based Problems
 
-11.Graphs
+10.Graphs(done)
     Graph Traversals - BFS And DFS
     MST
     Shortest Path Algorithms
     Topological Sort
     Graphs in Matrix
 
-12.Dynamic Programming
+11.Dynamic Programming
     DP with Arrays
     DP With Strings
     DP With Maths
@@ -64,16 +60,16 @@
     Counting Based Problems
     Hard Recursion And Backtracking Questions
     
-13.Other Topics
+12.Other Topics
     Hashmaps (done)
     Bit Manipulation(done)
     Greedy(done)
 
-14. Extra topic 
+13. Extra topic 
     prefix sum (done)
     no. theory (done)
     1795 contest Q c yogendra solution (done)
     Circular Queues
-    Deques - Hot Topic
+    Deques - Hot Topic(done)
     Doubly And Circular LL
     String Algorithms like KMP and Z Algorithm

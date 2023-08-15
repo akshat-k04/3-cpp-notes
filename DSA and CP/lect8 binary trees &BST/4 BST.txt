@@ -1,0 +1,14 @@
+1. BST is a binary but here we have all elements on the left node are smaller than the root node
+   and right node are greater then root node
+
+2. the structure of bst is totslly depends on order in which we add element 
+  eg:- if we add root as 100 then we add 50 then 130 then 40 we get 
+                       100
+                   50        130
+                40     
+
+    but if we add 100 then 40 then 130 then 50 we get
+                        100
+                     40      130
+                       50 
+                       this

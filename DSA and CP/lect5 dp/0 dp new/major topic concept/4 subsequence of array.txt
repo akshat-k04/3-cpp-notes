@@ -1,0 +1,9 @@
+see Q 15 
+basically we have to say weather it is possible that  any subsequence sum is k or not
+
+1. sum is always increasing 
+2. make dp array of nx(k+1) . k is the req sum
+3. because we not need to store if sum of any subsequence exceed k 
+4. So itrate from element 1 to n . take it or not take it .
+5. and based on data of sum till n-1 th element in dp we can make dp[n] 
+6. this is how we can find how many till less then k or = to k. are possible .

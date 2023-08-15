@@ -1,5 +1,3 @@
-// for creating a tree we caneighter use a class or a structure
-
 #include <bits/stdc++.h>
 using namespace std ;
 
@@ -17,24 +15,8 @@ typedef vector<pair<int,int>> vpii;
 typedef vector<int> vii;
 typedef vector<vector<int>> vvii;
 
-
-//solution here 
-
-class noding {
-    public:
-       int dat ;
-       noding*lft ;
-       noding * rght ;
-
-       noding(int val){ // constructor
-           dat=val ;
-           lft=NULL ;
-           rght=NULL ;
-       }
-} ;
+void print(vii& a){int n = a.size() ;for(int e=0 ;e<n ;e++)cout<<a[e] <<' ';cout<<endl ;}
 
 int main(){
     
-    noding *fk = new noding(10) ;
-    cout<<fk->dat<<endl ;
 }
