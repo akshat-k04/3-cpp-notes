@@ -9,16 +9,18 @@ private:
 public:
     string surname ;
     int age ;
+    profile(){} // default constructor
     profile(int k){
         money=k ;
         phone = 000000000 ;
         age=0 ;
     }
-    profile(){} // if we write the above consturctor then it is must that we have to write this default constructor
 } ;
 
 int main(){
     profile akshat(100) ; // this is how for parametric constructor we give argument
     cout<<akshat.age ;
-    profile garvit  ;
+    profile garvit ; 
+    //********** note:- if you comment thw default constructor then it will give you error
+    // if you make a constructor you also have to make a default constructor also to not meet with error
 }

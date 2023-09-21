@@ -58,3 +58,7 @@ chat gpt:-If you don't write a constructor in a class, the compiler will automat
 
 
 2.It must be placed in public section of class.
+
+3. there is a default copy constructor for each class it will copy the object 
+ eg:- node akshat(garvit) or node akshat =garvit ; copy constructor called
+      is same as:- node akshat ; akshat=garvit ;

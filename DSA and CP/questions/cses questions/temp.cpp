@@ -377,25 +377,76 @@ int main(){
     int t ;
     cin>>t ;
     for(int r=0 ;r<t ;r++){
-        int n,k ;
-        cin>>n >>k ;
-        vii a(n) ;
-        for(int e=0 ;e<n ;e++)cin>>a[e] ;
-        if(a[0]!=1)cout<<1<<endl ;
-        else if(a.size()==1)cout<<k+1<<endl ;
-        else{
-            
-            ll ans =1; ll indx = 0 ;
-            for(int e=1 ;e<=k ;e++){
-                // cout<<ans<<" ";
-                ans+=indx ;
-                while(indx<n && ans>=a[indx]){
-                    indx++ ; ans++ ;
-                } 
+        int n ,k ;
+        cin>>n>>k ;
+        string s ; cin>>s ;
+        vii ans ;
+        if(s[0]=='1') ans.pb(0) ;
+        for(int e=0 ;e<n ;){
+            char dic = s[e] ;
+            int counter =0 ;
+            while(e<n &&s[e]==dic){
+                counter++ ; e++ ;
             }
-            cout<<ans <<endl; 
+            ans.pb(counter) ;
         }
-       
+        if(ans.size()%2==1) ans.pb(0) ;
+        vii l0indxL1values(3001,-1) ;
+        for(int e=0 ;e<ans.size() ;e+=2){
+            int templ0=0 ;
+            int buffer = k ;
+            for(int f=e ;f<ans.size() ;f+=2){ // we are finding l0 max from e
+                templ0+=ans[f] ;
+                if(buffer<ans[f+1]){
+                    templ0+= buffer ;
+                    // now calculate the l1 and put this value to l0indx[temp]
+                    int l1 =0 ;
+                    for(int g =0 ;g<e ;g++)l1=max(l1,ans[g+1]) ;
+                    for(int g = f+2 ;g<ans.size() ;g+=2)l1=max(l1,ans[g+1]) ;
+                    l1=max(l1,ans[f+1]-buffer) ;
+                    l0indxL1values[templ0]=l1 ;
+                    goto l ;
+                }
+                templ0+=ans[f+1] ;
+                buffer-= ans[f+1] ;
+            }
+            l0indxL1values[templ0]=0 ;
+            l:;
+        }
+
+        vii l1indxl0value(3001,-1) ;
+        for(int e=0 ;e<ans.size() ;e+=2){
+            int templ0=0 ;
+            int buffer = k ;
+            for(int f=e ;f<ans.size() ;f+=2){ // we are finding l0 max from e
+                templ0+=ans[f+1] ;
+                if(buffer<ans[(f+2)%ans.size()]){
+                    templ0+= buffer ;
+                    // now calculate the l1 and put this value to l0indx[temp]
+                    int l1 =0 ;
+                    for(int g =0 ;g<e ;g++)l1=max(l1,ans[(g+2)%ans.size()]) ;
+                    for(int g = f+2 ;g<ans.size() ;g+=2)l1=max(l1,ans[(g+2)%ans.size()]) ;
+                    l1=max(l1,ans[(f+2)%ans.size()]-buffer) ;
+                    l1indxl0value[templ0]=l1 ;
+                    goto lk ;
+                }
+                templ0+=ans[(f+2)%ans.size()] ;
+                buffer-= ans[(f+2)%ans.size()] ;
+            }
+            l1indxl0value[templ0]=0 ;
+            lk:;
+        }
+        // now we are finding the ans
+        for(int number=1 ;number<=n ;number++){ // loop of 3000
+            int as =0 ;
+            for(int e=0 ;e<3001 ;e++){
+                if(l0indxL1values[e]!=-1)as= max(as ,number*e+l0indxL1values[e]) ;
+            }
+            for(int e=0 ;e<3001 ;e++){
+                if(l1indxl0value[e]!=-1)as= max(as ,number*l1indxl0value[e]+e) ;
+            }
+            cout<<as<<" ";
+        }
+        cout<<endl ;
     }
-    
 }

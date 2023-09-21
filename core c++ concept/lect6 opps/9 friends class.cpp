@@ -5,9 +5,9 @@ class number ;
 
 class calculator{
     public :
-    void addition(number, number);
-    void subtraction(number, number);
-    void multiplication(number, number);
+    static void addition(number, number);
+    static void subtraction(number, number);
+    static void multiplication(number, number);
 };
 
 
@@ -53,8 +53,8 @@ int main(){
     a.makeComplex(1,2);
     b.makeComplex(3,4);
 
-    calculator calculator ;
-    calculator.addition(a,b);
-    calculator.subtraction(a,b);
-    calculator.multiplication(a,b);
+    // calculator calculator ;
+    calculator::addition(a,b);
+    calculator::subtraction(a,b);
+    calculator::multiplication(a,b);
 }

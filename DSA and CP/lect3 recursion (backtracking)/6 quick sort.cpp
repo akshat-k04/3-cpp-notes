@@ -39,27 +39,41 @@ int indxfinder(vii &a ,int start,int end){
     return (start+counter) ;
 }
 
-void sortall(vii & a , int start, int end){
-    int j = end+2 ;
+// void sortall(vii & a , int start, int end){
+//     int j = end+2 ;
 
-    for(int e=start ; e<=end; e++){
-        if(a[e]>a[end+1]){
-            while(a[j]>a[end]){
-                j++ ;
-            }
-            swap(a[e],a[j]) ;
-        }
-    }
-}
+//     for(int e=start ; e<=end; e++){
+//         if(a[e]>a[end+1]){
+//             while(a[j]>a[end]){
+//                 j++ ;
+//             }
+//             swap(a[e],a[j]) ;
+//         }
+//     }
+// }
 
-void quickSort(vii &a , int start ,int end){
-    int index = indxfinder(a,start,end) ;
-    swap(a[index],a[start]) ;
-    sortall(a,start,index-1);
-    if(end-start>1){
-        quickSort(a,start,index-1) ;
-        quickSort(a,index+1 , end) ;
+// void quickSort(vii &a , int start ,int end){
+//     int index = indxfinder(a,start,end) ;
+//     swap(a[index],a[start]) ;
+//     sortall(a,start,index-1);
+//     if(end-start>1){
+//         quickSort(a,start,index-1) ;
+//         quickSort(a,index+1 , end) ;
+//     }
+// }
+
+void quick_sort(vii &a  , int start, int end){
+    int pivotindx = indxfinder(a,start,end) ;
+    // currently the pivot number is at start that is why we start from start +1
+    int i = start+1 ,j =end ;
+    while(j-i>0){
+        while(j>=start &&a[j]>a[start])j-- ;
+        while(i<=end&&a[i]<=a[start])i++ ;
+        if(j-i>0)swap(a[i],a[j]) ;
     }
+    swap(a[start],a[pivotindx]) ;
+    if(pivotindx-start>1)quick_sort(a,start,pivotindx-1) ;
+    if(end-pivotindx>1)quick_sort(a,pivotindx+1, end) ;
 }
 
 int main(){
@@ -72,7 +86,7 @@ int main(){
         a.pb(h) ;
     }
     //input is done
-    quickSort(a,0,n-1) ;
+    quick_sort(a,0,n-1) ;
 
     for(int e=0 ;e<n ;e++){
         cout<<a[e]<<" " ;

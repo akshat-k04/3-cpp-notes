@@ -1,0 +1,10 @@
+Array and String (done)
+Backtracking (done)
+Sorting (done)
+binary Search (done)
+bit Manipulation (done)
+binary Tree and bst (done)
+Linked list
+stacks and Queues
+Graph +(floyd warshell ,Kruskal ,bridge algo, go through striver series) 
+DP

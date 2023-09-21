@@ -374,5 +374,9 @@ void printpair(vpii & a){for(int e=0 ;e<a.size() ;e++){cout<<a[e].first<<" "<<a[
 
 
 int main(){
-    
+    int t ;
+    cin>>t ;
+    for(int r=0 ;r<t ;r++){
+        
+    }
 }
