@@ -1,11 +1,12 @@
-    1.Array and String(done)
-    2.Backtracking(done)
-    3.Sorting(done)
-    4.binary Search(done)
-    5.bit Manipulation(done)
-    6.stacks and Queues(done)
+    1.Array and String
+    2.Backtracking
+    3.Sorting
+    4.binary Search
+    5.bit Manipulation
+    6.stacks and Queues
     7.binary Tree and bst
     8.Linked list
+    
     9.Graph +(floyd warshell ,Kruskal ,bridge algo, go through striver series) 
     10.DP
     11.range query

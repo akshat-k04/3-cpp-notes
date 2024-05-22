@@ -1,0 +1,4 @@
+Here we generally need to comparet the string
+
+so just make 2 variables for this 2 string and then explore all the possibilities 
+to write the dp

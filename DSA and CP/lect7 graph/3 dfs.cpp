@@ -31,9 +31,11 @@ void dfs(int vertex,vvii & list,vector<bool> &visited){
     for(auto child: list[vertex]){
         // case 2:- take action on child before entering the child
         dfs(child,list,visited) ;
+        
         // case 3:- take action on child after exiting the child
     }
     //case 4:- take action on vertex before exiting the vertex
+
 }
 
 int main(){

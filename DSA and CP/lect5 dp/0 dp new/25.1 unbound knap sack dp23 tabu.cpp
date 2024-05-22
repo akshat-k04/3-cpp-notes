@@ -3,21 +3,23 @@
 #include <bits/stdc++.h>
 using namespace std ;
 
-#define pb push_back
-#define pob pop_back
-#define fir first 
-#define sec second
-#define all(x) x.begin(), x.end()
 
-typedef long long ll;
-typedef vector<long long> vll;
-typedef pair<long long, long long> pll;
-typedef vector<pair<long long, long long>> vpll;
-typedef vector<pair<int,int>> vpii;
-typedef vector<int> vii;
-typedef vector<vector<int>> vvii;
+int unboundedKnapsack(int n, int max_weight, vector<int> &value, vector<int> &weight){
+    
+    vector<vector<int>> dp(n, vector<int> (max_weight+1)) ;
 
-void print(vii& a){int n = a.size() ;for(int e=0 ;e<n ;e++)cout<<a[e] <<' ';cout<<endl ;}
+    for(int e=0 ;e*weight[0]<= max_weight ;e++)dp[0][e*weight[0]]= e*value[0] ;
+
+    for(int e=1 ;e<n ;e++){
+        for(int f=0 ;f<=max_weight ;f++){
+            dp[e][f] = max(dp[e-1][f],dp[e][f]) ;
+            if(f+weight[e]<=max_weight)dp[e][f+weight[e]]=max(dp[e][f]+value[e],dp[e][f+weight[e]]) ;
+        }
+    }
+    int ans=0 ;
+    for(int e=0 ;e<=max_weight ;e++)ans=max(ans, dp[n-1][e]) ;
+    return ans ;
+}
 
 int main(){
     

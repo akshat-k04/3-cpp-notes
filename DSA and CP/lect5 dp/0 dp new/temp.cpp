@@ -16,7 +16,7 @@ typedef vector<int> vii;
 typedef vector<vector<int>> vvii;
 
 const ll largestLL= 1e18;
-const int largestI = 1e9;
+const int largestI = 1000000000;
 const ll primeInt2 = 1000000007;
 const int primeInt = 998244353;
 
@@ -237,6 +237,7 @@ void dijkstra(int vertex,vector<vpii>&list,vii&dist){
             
             if(length+child.sec<dist[child.fir]){
                 dist[child.fir]=length+child.sec ;
+                if(dist[child.fir]>largestI)dist[child.fir]=largestI ;
                 que.insert({dist[child.fir],child.fir}) ;
             }
         }
@@ -374,28 +375,26 @@ void printpair(vpii & a){for(int e=0 ;e<a.size() ;e++){cout<<a[e].first<<" "<<a[
 
 
 int main(){
-    int t ;
-    cin>>t ;
-    for(int r=0 ;r<t ;r++){
-        int n,k ;
-        cin>>n >>k ;
-        vii a(n) ;
-        for(int e=0 ;e<n ;e++)cin>>a[e] ;
-        if(a[0]!=1)cout<<1<<endl ;
-        else if(a.size()==1)cout<<k+1<<endl ;
-        else{
-            
-            ll ans =1; ll indx = 0 ;
-            for(int e=1 ;e<=k ;e++){
-                // cout<<ans<<" ";
-                ans+=indx ;
-                while(indx<n && ans>=a[indx]){
-                    indx++ ; ans++ ;
-                } 
-            }
-            cout<<ans <<endl; 
-        }
-       
-    }
+    int n,m ;
+    cin>>n>>m ;
+    int source,target ;
+    cin>>source>>target ;
     
+    vii landmines(n) ;
+    for(int e=0 ;e<n ;e++)cin>>landmines[e] ;
+
+    vpii arr(n) ;
+    for(int e=0 ;e<m ;e++)cin>>arr[e].fir >> arr[e].sec ;
+
+    vector<vpii> list(n) ;
+    for(int e=0 ;e<m ;e++){
+        if(landmines[arr[e].sec]==0&& landmines[arr[e].fir]==0)list[arr[e].fir].pb({arr[e].sec,1}) ;
+        if(landmines[arr[e].sec]==0&& landmines[arr[e].fir]==0)list[arr[e].sec].pb({arr[e].fir,1}) ;
+    }
+    vii dist(n+1,largestI) ;
+
+    dijkstra(source,list,dist) ;
+
+    if(dist[target]<largestI)cout<<dist[target] <<endl ;
+    else cout<<-1<<endl ;
 }
