@@ -1,0 +1,14 @@
+Trees 
+Graph
+DP
+Range Query (segment tree)
+DSU
+Array , String
+heap , binary Search
+stack queue
+linked list
+
+Complete the required Q in 450 DSA 
+
+Start CP
+file:///C:/Users/HP/AppData/Local/Microsoft/Windows/INetCache/IE/FVXOAUU9/Competitive_Programming_Complete_Roadmap_(beginner_to_advanced)[1].pdf

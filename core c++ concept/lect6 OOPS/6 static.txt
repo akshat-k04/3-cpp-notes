@@ -1,0 +1,72 @@
+The static keyword has different meanings when used with different types. 
+We can use static keywords with:
+
+1.Static Variables: Variables in a function, Variables in a class
+2.Static Members of Class: Class objects and Functions in a class Let us now 
+  look at each one of these uses of static in detail.
+
+
+---------static variables----------
+When a variable is declared as static, space for it gets allocated for the 
+lifetime of the program. Even if the function is called multiple times, space 
+for the static variable is allocated only once and the value of the variable 
+in the previous call gets carried through the next function call. 
+
+eg:-
+void demo(){
+    static int count = 0;
+    cout << count << " ";
+    count++;
+}
+ 
+int main()for (int i = 0; i < 5; i++)demo();
+
+output :- 0 1 2 3 4 
+
+
+-------static memeber of class----------
+As the variables declared as static are initialized only once as they are allocated 
+space in separate static storage so, the static variables in a class are shared by 
+the objects. There can not be multiple copies of the same static variables for 
+different objects. Also because of this reason static variables can not be initialized 
+using constructors. 
+So, a static variable inside a class should be initialized explicitly by the user 
+using the class name and scope resolution operator outside the class.
+eg:-
+class GfG {
+public:
+    static int i;
+};
+int GfG::i = 1;
+
+value of i is same for all objects
+
+https://www.geeksforgeeks.org/static-keyword-cpp
+
+
+-----------static function of class---------
+ It is a member function that is used to access only static data members. It cannot 
+ access non-static data members not even call non-static member functions. It can be 
+ called even if no objects of the class exist. It is also used to maintain a single 
+ copy of the class member function across different objects of the class.
+
+
+
+ #include <iostream>
+
+class MathUtils {
+public:
+    static int add(int x, int y) {
+        return x + y;
+    }
+};
+
+int main() {
+    int result = MathUtils::add(5, 3);
+    std::cout << "Result: " << result << std::endl;  // Output: Result: 8
+    return 0;
+}
+
+In this C++ example, add is a static function defined within the MathUtils class. Static member functions in C++ are declared using the static keyword and can be called using the scope resolution operator :: without needing to create an instance of the class.
+
+Just like in the Python example, the add function adds two numbers together. It doesn't depend on the state of any specific object of the class and can be called directly using MathUtils::add(5, 3).

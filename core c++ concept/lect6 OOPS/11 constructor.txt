@@ -1,0 +1,64 @@
+1.Constructor in C++ is a special method that is invoked automatically at the 
+  time of object creation. It is used to initialize the data members of new objects 
+  generally.
+
+2.The constructor in C++ has the same name as the class or structure.
+
+3.Constructor is invoked at the time of object creation.It constructs the values 
+  i.e. provides data for the object which is why it is known as constructors.
+
+4.Constructor do not return value, hence they do not have a return type.
+
+5.types of constructor
+    • Default constructor(implicit and explicit)
+    • Parameterized constructor
+    • Overloaded constructor
+    • Constructor with default value
+    • Copy constructor
+    • Inline constructor
+
+6.
+  a.implicit default constructor:- if we not write constructor then the constructor 
+                                 the compiler calls is This.
+
+  b.explicit default constructor:-construct(){
+                                      a = 10;
+                                      
+                                      cin>>b ;
+                                      or we can use
+                                      //b = 20;
+                                  }
+                                  this is called as EDC where we set the default 
+                                  value of object .
+  
+  c. Parameterized constructor :- where we need to pass the argument
+                                   construct(int x1, int y1)
+                                   {
+                                       x = x1;
+                                       y = y1;
+                                   }
+
+
+  d. constructor overloading means we make 2 or 3 or 4 ... constructor with different argument 
+     example construct(){a=5}, construct(int c){a=c} ,construct(int b,int g){a=b+d}
+     based on argument we provide during initializing the constructor called 
+
+  e. rest are time pass
+  
+*************imp***********
+
+1.A constructor is automatically called when an object is created.
+  if we not write constructor then default constructor will called after object creation
+  if we write then that will called
+
+chat gpt:-If you don't write a constructor in a class, the compiler will automatically
+          generate a default constructor for you. This default constructor doesn't 
+          have any parameters and doesn't contain any explicit code. When you create 
+          an object of that class, the default constructor will be executed.
+
+
+2.It must be placed in public section of class.
+
+3. there is a default copy constructor for each class it will copy the object 
+ eg:- node akshat(garvit) or node akshat =garvit ; copy constructor called
+      is same as:- node akshat ; akshat=garvit ;

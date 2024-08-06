@@ -1,0 +1,36 @@
+1.let in class we have private member named money the object have
+2.i want to calculate the sum of all money
+3.so what we do is this
+
+class profile{
+    private:
+        int money ;
+    public:
+        int getMoney(){
+            return money ;
+        }
+}
+
+int sum(profile akshat,profile garvit){
+    int ans = akshat.getMoney() +garvit.getMoney() ;
+    return ans ;
+}
+
+int main(){
+    profile akshat ,garvit ;
+    cout<<sum ;
+}
+
+this is what we do we call function getMoney()  that will give us
+
+4.instead of calling function getMoney we directly access private member
+ just like public members 
+ by writing friend sum(profile a,profile b) ;
+ in class 
+
+
+5.this will say that this function is friend of the class
+
+6.NOTE:- friend function is not member function it is normal function with spcial 
+         power of accessing the private values
+
